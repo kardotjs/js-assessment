@@ -12,6 +12,23 @@ flowControlAnswers = {
    * @returns {String} The string 'fizz', 'buzz', or 'fizzbuzz'
    */
   fizzBuzz: function fizzBuzz(num) {
+    if (!Number.isInteger(parseInt(num))) {
+      return false;
+    }
+
+    function isDivisibleBy(num, by) {
+      return num % by === 0;
+    }
+
+
+    const by3 = isDivisibleBy(num, 3)
+    const by5 = isDivisibleBy(num, 5)
+
+    return by3 && by5 ? "fizzbuzz" :
+      by3 ? "fizz" :
+        by5 ? "buzz" :
+          num;
+
 
   },
 };
